@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Word Bonding Extension",
+  "name": "Word Bolding Extension",
   "version": "1.0",
-  "description": "Bonds the front half of each word in the webpage",
+  "description": "Bolds the front half of each word in the webpage",
   "permissions": ["scripting", "activeTab", "declarativeContent", "storage"],
   "action": {
     "default_popup": "popup.html",
