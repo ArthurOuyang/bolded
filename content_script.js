@@ -1,5 +1,5 @@
 function boldFirstHalf(element) {
-  if (element.nodeType === Node.TEXT_NODE) {
+  if (element.nodeType === Node.TEXT_NODE && !element.parentNode.closest('script, style, noscript')) {
     const words = element.textContent.split(' ');
     const boldedWords = words.map((word) => {
       const halfLength = Math.floor(word.length / 2);
@@ -8,7 +8,9 @@ function boldFirstHalf(element) {
       return `<b>${firstHalf}</b>${secondHalf}`;
     });
     const newHTML = boldedWords.join(' ');
-    element.insertAdjacentHTML('beforebegin', newHTML);
+    const span = document.createElement('span');
+    span.innerHTML = newHTML;
+    element.parentNode.insertBefore(span, element);
     element.remove();
   } else {
     Array.from(element.childNodes).forEach((child) => boldFirstHalf(child));
