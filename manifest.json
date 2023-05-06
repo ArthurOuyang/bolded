@@ -4,8 +4,7 @@
   "version": "1.0",
   "description": "Bonds the front half of each word in the webpage",
   "permissions": ["scripting", "activeTab", "declarativeContent", "storage"],
-  "browser_action": {
-    "default_popup": "popup.html",
+  "action": {
     "default_icon": {
       "16": "images/icon-16.png",
       "32": "images/icon-32.png",
