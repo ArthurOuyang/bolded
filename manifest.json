@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Word Bonding Extension",
   "version": "1.0",
   "description": "Bonds the front half of each word in the webpage",
