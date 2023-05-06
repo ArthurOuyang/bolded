@@ -16,7 +16,7 @@ function boldFirstHalf(element) {
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.action === 'applyWordBonding') {
+  if (request.action === 'applyWordBolding') {
     boldFirstHalf(document.body);
   }
 });
