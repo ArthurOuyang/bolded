@@ -7,7 +7,7 @@ function bondWords(element) {
     });
     element.textContent = bondedWords.join(' ');
   } else {
-    element.childNodes.forEach((child) => bondWords(child));
+    Array.from(element.childNodes).forEach((child) => bondWords(child));
   }
 }
 
