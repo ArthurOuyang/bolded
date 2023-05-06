@@ -3,19 +3,29 @@
   "name": "Word Bonding Extension",
   "version": "1.0",
   "description": "Bonds the front half of each word in the webpage",
-  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "permissions": ["scripting", "activeTab", "declarativeContent", "storage"],
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png",
+      "128": "images/icon-128.png"
     }
   },
   "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+    "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      }
+    }
   },
   "content_scripts": [
     {
