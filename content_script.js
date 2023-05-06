@@ -1,18 +1,22 @@
-function bondWords(element) {
+function boldFirstHalf(element) {
   if (element.nodeType === Node.TEXT_NODE) {
     const words = element.textContent.split(' ');
-    const bondedWords = words.map((word) => {
+    const boldedWords = words.map((word) => {
       const halfLength = Math.floor(word.length / 2);
-      return word.slice(0, halfLength) + word.slice(0, halfLength);
+      const firstHalf = word.slice(0, halfLength);
+      const secondHalf = word.slice(halfLength);
+      return `<b>${firstHalf}</b>${secondHalf}`;
     });
-    element.textContent = bondedWords.join(' ');
+    const newHTML = boldedWords.join(' ');
+    element.insertAdjacentHTML('beforebegin', newHTML);
+    element.remove();
   } else {
-    Array.from(element.childNodes).forEach((child) => bondWords(child));
+    Array.from(element.childNodes).forEach((child) => boldFirstHalf(child));
   }
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'applyWordBonding') {
-    bondWords(document.body);
+    boldFirstHalf(document.body);
   }
 });
