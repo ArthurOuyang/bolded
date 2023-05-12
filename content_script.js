@@ -2,7 +2,7 @@ function boldFirstHalf(element) {
   if (element.nodeType === Node.TEXT_NODE && !element.parentNode.closest('script, style, noscript')) {
     const words = element.textContent.split(' ');
     const boldedWords = words.map((word) => {
-      const halfLength = Math.floor(word.length / 2);
+      const halfLength = Math.ceil(word.length / 2);
       const firstHalf = word.slice(0, halfLength);
       const secondHalf = word.slice(halfLength);
       return `<b>${firstHalf}</b>${secondHalf}`;
